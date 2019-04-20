@@ -1,0 +1,32 @@
+<h1> employee pto tracker </h1>
+
+<% if employee_signed_in? %>
+    <%= link_to 'Admin', edit_employee_registration_path %>
+    <%= link_to 'Log Out', destroy_employee_session_path %>
+<% else %>
+    <%= link_to 'Log In', new_employee_session_path %>
+<% end %>
+
+<table>
+    <tr>
+        <th> Fist Name </th>
+        <th> Last Name </th>
+        <th> email </th>
+        <th> Remaining </th>
+        <th> Used      </th>
+        <th> Requested </th>
+        <th> Total pto </th>
+    </tr>
+    <tr>
+        <% @employee.each do |e| %>
+        <th><%= e.first_name %></th>
+        <th><%= e.last_name %></th>
+        <th><%= e.email %></th>
+        <th><%= e.remaining_pto %></th>
+        <th><%= e.used_pto %></th>
+        <th><%= e.total_pto %></th>
+        <% end %>
+    </tr>
+</table>
+
+

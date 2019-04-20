@@ -1,0 +1,2 @@
+class PtoController < ApplicationController
+end
